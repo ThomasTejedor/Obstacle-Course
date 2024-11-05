@@ -9,6 +9,7 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] GameObject bullet;
     [SerializeField] float rateOfFire = 3;
+    [SerializeField] float startShoot = 0;
     private float yAxis;
     private float xAxis;
     private float zAxis;
@@ -17,7 +18,7 @@ public class Shooter : MonoBehaviour
     void Start() {
         renderer = GetComponent<MeshRenderer>();
         
-        InvokeRepeating("Shoot", 5, rateOfFire);
+        InvokeRepeating("Shoot", startShoot, rateOfFire);
         xAxis = gameObject.transform.position.x;
         yAxis = gameObject.transform.position.y;
         zAxis = gameObject.transform.position.z;
