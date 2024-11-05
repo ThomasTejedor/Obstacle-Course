@@ -6,6 +6,7 @@ public class Digger : MonoBehaviour
 {
     [SerializeField] float digAmount = 5f;
     [SerializeField] float digSpeed = 10f;
+    [SerializeField] float startPosition = 0f; 
     private float startY;
     private float goingDown;
 
@@ -14,6 +15,7 @@ public class Digger : MonoBehaviour
     {
         goingDown = -1;
         startY = transform.position.y;
+        transform.position = new Vector3(transform.position.x, startY - startPosition, transform.position.z);
 
     }
 
