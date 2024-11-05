@@ -13,7 +13,7 @@ public class Shooter : MonoBehaviour
     private float yAxis;
     private float xAxis;
     private float zAxis;
-    private MeshRenderer renderer;
+    private new MeshRenderer renderer;
     // Start is called before the first frame update
     void Start() {
         renderer = GetComponent<MeshRenderer>();
@@ -27,7 +27,6 @@ public class Shooter : MonoBehaviour
     void Shoot() {
         UnityEngine.Vector3 size = renderer.bounds.size;
         GameObject newBullet = Instantiate(bullet, new UnityEngine.Vector3(xAxis, yAxis, zAxis), transform.rotation);
-        Debug.Log("Spawned Bullet " + size.z + " " + zAxis); 
 
     }
     // Update is called once per frame
