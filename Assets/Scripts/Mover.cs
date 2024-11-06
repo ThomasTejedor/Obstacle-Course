@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    [SerializeField] GameController gc; 
     public Rigidbody rb;
     [SerializeField] float speed = 20;
     private bool isJumpPressed = false;
@@ -15,6 +16,7 @@ public class Mover : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if(gc.isEnded()) return;
         isJumpPressed = Input.GetButtonDown("Jump");
         if(isJumpPressed){
             Jump();

@@ -20,7 +20,7 @@ public class Digger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float yAxis = goingDown * Time.deltaTime * digSpeed; 
         transform.Translate(0, yAxis, 0);

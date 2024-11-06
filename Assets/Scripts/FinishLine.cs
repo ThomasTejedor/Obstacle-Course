@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndPoint : MonoBehaviour
+public class FinishLine : MonoBehaviour
 {
-    private bool gameEnd;
     // Start is called before the first frame update
-    void Start()
-    {
-        gameEnd = false;
-    }
+    [SerializeField] GameController gc;
 
     void OnTriggerEnter(Collider collider){
-        gameEnd = true;
+        gc.endGame();
     }
 }
