@@ -1,0 +1,1 @@
+Start the game by going to builds folder and starting up the Obstacle Course.exe file 
