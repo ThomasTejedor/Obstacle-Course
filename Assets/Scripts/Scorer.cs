@@ -6,7 +6,7 @@ public class Scorer : MonoBehaviour
 {
     [SerializeField] GameController gc;
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag != "Hit") {
+        if(other.gameObject.tag != "Hit" && other.gameObject.tag != "Ground") {
 
             gc.increaseHits();
             Debug.Log("You bumped into " + gc.getHits() + " obstacles!"); 

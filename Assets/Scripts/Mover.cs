@@ -7,6 +7,7 @@ public class Mover : MonoBehaviour
     [SerializeField] GameController gc; 
     public Rigidbody rb;
     [SerializeField] float speed = 20;
+    private bool grounded = false;
     private bool isJumpPressed = false;
     // Start is called before the first frame update
     void Start() {
@@ -18,11 +19,24 @@ public class Mover : MonoBehaviour
     void Update() {
         if(gc.isEnded()) return;
         isJumpPressed = Input.GetButtonDown("Jump");
-        if(isJumpPressed){
+        if(isJumpPressed && grounded){
+            grounded = false;
             Jump();
         }
         MovePlayer();
         
+    }
+
+    private void OnCollisionStay(Collision collision) {
+        if(collision.gameObject.tag == "Ground") {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        if(collision.gameObject.tag == "Ground") {
+            grounded = false;
+        }
     }
 
     void PrintInstructions() {

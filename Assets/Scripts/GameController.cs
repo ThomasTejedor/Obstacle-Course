@@ -24,4 +24,9 @@ public class GameController : MonoBehaviour
     public bool isEnded(){
         return gameEnded;
     }
+
+    public void restartGame() {
+        hits = 0; 
+        gameEnded = false;
+    }
 }
